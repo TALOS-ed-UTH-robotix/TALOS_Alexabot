@@ -1,0 +1,11 @@
+# .gitignore
+# Dimitrios Paraschas (paraschas@gmail.com)
+
+# Vim swap files
+*.swp
+
+# Python byte code files
+*.pyc
+
+# PDF files
+*.pdf
