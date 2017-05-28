@@ -13,6 +13,10 @@ from flask import Flask
 import gopigo
 import time
 
+
+from pygame import mixer
+
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -70,19 +74,38 @@ def coffee():
     return 'coffee!'
 
 
+def play_mp3(mp3, run_time):
+    mixer.init()
+    mixer.music.load(mp3)
+    mixer.music.play()
+
+    end_time = time.time() + run_time
+
+    while time.time() < end_time and mixer.music.get_busy():
+        continue
+
+
 @app.route('/biscuits')
 def biscuits():
     print("Bringing you biscuits!")
     gopigo.fwd()
     time.sleep(5)
     gopigo.stop()
+
     gopigo.right_rot()
     time.sleep(1)
     gopigo.stop()
+
     time.sleep(3)
+
     gopigo.fwd()
     time.sleep(5)
     gopigo.stop()
+
+    mp3 = "here.mp3"
+    run_time = 5
+    play_mp3(mp3, run_time)
+
     return "You're welcome!"
 
 
