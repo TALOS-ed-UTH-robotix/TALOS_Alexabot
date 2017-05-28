@@ -71,7 +71,7 @@ def coffee():
 
 
 @app.route('/biscuits')
-def forward():
+def biscuits():
     print("Bringing you biscuits!")
     gopigo.fwd()
     time.sleep(5)
