@@ -69,5 +69,22 @@ def coffee():
     print("Coffee!")
     return 'coffee!'
 
+
+@app.route('/biscuits')
+def forward():
+    print("Bringing you biscuits!")
+    gopigo.fwd()
+    time.sleep(5)
+    gopigo.stop()
+    gopigo.right_rot()
+    time.sleep(1.2)
+    gopigo.stop()
+    time.sleep(3)
+    gopigo.fwd()
+    time.sleep(5)
+    gopigo.stop()
+    return "You're welcome!"
+
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
