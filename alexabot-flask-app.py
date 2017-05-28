@@ -77,11 +77,11 @@ def biscuits():
     time.sleep(5)
     gopigo.stop()
     gopigo.right_rot()
-    time.sleep(1.2)
+    time.sleep(1)
     gopigo.stop()
     time.sleep(3)
     gopigo.fwd()
-    time.sleep(5)
+    time.sleep(10)
     gopigo.stop()
     return "You're welcome!"
 
